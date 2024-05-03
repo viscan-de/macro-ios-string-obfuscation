@@ -47,8 +47,7 @@ let package = Package(
         .macro(
             name: "ObfuscateMacroPlugin",
             dependencies: [
-                .product(name: "SwiftSyntaxWrapper", package: "framework-ios-swift-syntax"),
-                .product(name: "SwiftParser", package: "swift-syntax"),
+                .product(name: "SwiftSyntaxWrapper", package: "swift-syntax-xcframeworks"),                .product(name: "SwiftParser", package: "swift-syntax"),
                 .product(name: "SwiftParserDiagnostics", package: "swift-syntax"),
                 .product(name: "Algorithms", package: "swift-algorithms"),
                 .product(name: "Crypto", package: "swift-crypto"),
