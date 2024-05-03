@@ -46,11 +46,7 @@ let package = Package(
         .macro(
             name: "ObfuscateMacroPlugin",
             dependencies: [
-                .product(name: "SwiftSyntax", package: "swift-syntax"),
-                .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
-                .product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
-                .product(name: "SwiftSyntaxBuilder", package: "swift-syntax"),
-                .product(name: "SwiftParser", package: "swift-syntax"),
+                .product(name: "SwiftSyntaxWrapper", package: "swift-syntax-xcframeworks"),                .product(name: "SwiftParser", package: "swift-syntax"),
                 .product(name: "SwiftParserDiagnostics", package: "swift-syntax"),
                 .product(name: "Algorithms", package: "swift-algorithms"),
                 .product(name: "Crypto", package: "swift-crypto"),
@@ -61,11 +57,7 @@ let package = Package(
         .testTarget(
             name: "ObfuscateMacroTests",
             dependencies: [
-                .product(name: "SwiftSyntax", package: "swift-syntax"),
-                .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
-                .product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
-                .product(name: "SwiftSyntaxBuilder", package: "swift-syntax"),
-                .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax"),
+                .product(name: "SwiftSyntaxWrapper", package: "swift-syntax-xcframeworks"),
                 "ObfuscateMacro",
                 "ObfuscateMacroPlugin"
             ]
