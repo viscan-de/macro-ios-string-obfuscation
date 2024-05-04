@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/vigram-sw/framework-ios-swift-syntax.git",
       "state" : {
-        "revision" : "cdf5fcc36a8b4f3e6a0f2614eb7e501539b4451f",
-        "version" : "509.0.2"
+        "revision" : "707603d533b3b73c1f7000b93ba379d6c75cfb44",
+        "version" : "510.0.1"
       }
     },
     {
