@@ -37,6 +37,7 @@ let package = Package(
         .target(
             name: "ObfuscateMacro",
             dependencies: [
+                //.byName(name: "Algorithms"),
                 .product(name: "Algorithms", package: "swift-algorithms"),
                 .product(name: "Crypto", package: "swift-crypto"),
                 "ObfuscateMacroPlugin",
@@ -57,10 +58,19 @@ let package = Package(
         .testTarget(
             name: "ObfuscateMacroTests",
             dependencies: [
+                //.byName(name: "Algorithms"),
+                .product(name: "Algorithms", package: "swift-algorithms"),
                 .product(name: "SwiftSyntaxWrapper", package: "swift-syntax-xcframeworks"),
                 "ObfuscateMacro",
                 "ObfuscateMacroPlugin"
             ]
         ),
+       /*
+            .binaryTarget(
+                name: "Algorithms",
+                path: "Algorithms.xcframework"
+            )
+        */
+            
     ]
 )
