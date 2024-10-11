@@ -31,6 +31,10 @@ let package = Package(
             url: "https://github.com/apple/swift-crypto.git",
             "1.0.0"..<"4.0.0"
         ),
+        .package(
+            url: "https://github.com/stackotter/swift-macro-toolkit.git",
+            branch: "main"
+        ),
     ],
     targets: [
         .target(
@@ -49,6 +53,7 @@ let package = Package(
                 //.byName(name: "Algorithms"),
                 .product(name: "Algorithms", package: "swift-algorithms"),
                 .product(name: "Crypto", package: "swift-crypto"),
+                .product(name: "MacroToolkit", package: "swift-macro-toolkit"),
                 "ObfuscateSupport"
             ]
         ),
