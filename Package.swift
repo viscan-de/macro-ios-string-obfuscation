@@ -26,7 +26,11 @@ let package = Package(
         .package(
             url: "https://github.com/apple/swift-algorithms",
             from: "1.1.0"
-        )
+        ),
+        .package(
+            url: "https://github.com/apple/swift-crypto.git",
+            from: "3.0.0"
+        ),
     ],
     targets: [
         .target(
@@ -34,6 +38,7 @@ let package = Package(
             dependencies: [
                 //.byName(name: "Algorithms"),
                 .product(name: "Algorithms", package: "swift-algorithms"),
+                .product(name: "Crypto", package: "swift-crypto"),
                 "ObfuscateMacroPlugin",
                 "ObfuscateSupport"
             ]
@@ -43,7 +48,7 @@ let package = Package(
             dependencies: [
                 //.byName(name: "Algorithms"),
                 .product(name: "Algorithms", package: "swift-algorithms"),
-                .product(name: "SwiftSyntaxWrapper", package: "framework-ios-swift-syntax"),
+                .product(name: "Crypto", package: "swift-crypto"),
                 "ObfuscateSupport"
             ]
         ),
