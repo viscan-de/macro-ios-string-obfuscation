@@ -21,8 +21,8 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/apple/swift-syntax.git",
-            "510.0.1"..<"605.0.0"
+            url: "https://github.com/viscan-de/framework-ios-swift-syntax.git",
+            "600.0.0"..<"605.0.0"
         ),
         .package(
             url: "https://github.com/apple/swift-algorithms",
@@ -37,7 +37,6 @@ let package = Package(
         .target(
             name: "ObfuscateMacro",
             dependencies: [
-                //.byName(name: "Algorithms"),
                 .product(name: "Algorithms", package: "swift-algorithms"),
                 .product(name: "Crypto", package: "swift-crypto"),
                 "ObfuscateMacroPlugin",
@@ -47,8 +46,7 @@ let package = Package(
         .macro(
             name: "ObfuscateMacroPlugin",
             dependencies: [
-                .product(name: "SwiftSyntaxWrapper", package: "swift-syntax-xcframeworks"),                .product(name: "SwiftParser", package: "swift-syntax"),
-                .product(name: "SwiftParserDiagnostics", package: "swift-syntax"),
+                .product(name: "SwiftSyntaxWrapper", package: "framework-ios-swift-syntax"),
                 .product(name: "Algorithms", package: "swift-algorithms"),
                 .product(name: "Crypto", package: "swift-crypto"),
                 "ObfuscateSupport"
@@ -58,12 +56,9 @@ let package = Package(
         .testTarget(
             name: "ObfuscateMacroTests",
             dependencies: [
-                //.byName(name: "Algorithms"),
-                .product(name: "Algorithms", package: "swift-algorithms"),
                 .product(name: "SwiftSyntaxWrapper", package: "framework-ios-swift-syntax"),
                 "ObfuscateMacro",
-                "ObfuscateMacroPlugin"
-            ]
+                "ObfuscateMacroPlugin"]
         ),
        /*
             .binaryTarget(
